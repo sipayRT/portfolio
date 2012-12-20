@@ -39,6 +39,28 @@ $(document).ready(function() {
 		}
 	}
 	
+	/* menu navigation */
+
+	$('.main-navigation-menu-list-item-link').bind('click', function(event){
+		var targetPlace = $(this).attr('href');
+
+		$('html, body').stop().animate({
+			scrollTop: $(targetPlace).offset().top
+		}, 1500);
+		/*
+		если вы не хотите использовать эффекты плагина:
+		$('html, body').stop().animate({
+			scrollTop: $($anchor.attr('href')).offset().top
+		}, 1000);
+		*/
+		event.preventDefault();
+	});
+
+
+	
+	
+	/* end menu navigation */
+	
 	
 	/* open/close accordeon */
 	if($('[data-js="show-hidden-content"]').length > 0){
@@ -86,7 +108,6 @@ $(document).ready(function() {
 		popupSlider = '<div class="popup-bg"></div><div class="popup-content-wrap"><div class="popup-content"><div class="close-popup-button"></div><div class="popup-image-wrap">' + allImagesContainer + '</div><div class="popup-buttons"><div class="popup-button-item prev"></div><div class="popup-button-item next"></div></div></div></div>';
 		$('body').prepend(popupSlider);
 		$('.slide-'+slideIndex).animate({'z-index': '1', 'opacity': '1'}, 500);
-
 			
 		// next slide
 		$('.popup-button-item.next').live('click', function(event){
@@ -135,18 +156,7 @@ $(document).ready(function() {
 				}
 				event.stopPropagation();
 			}
-		});
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		});	
 	});
 	
 	$('.close-popup-button, .popup-bg').live('click',function(){
