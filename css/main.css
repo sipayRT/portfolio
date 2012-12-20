@@ -1,0 +1,354 @@
+/* Eric Meyer's Reset CSS v2.0 */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+body{
+	color: #4C4C4C;
+	font-family: 'Cuprum', cursive;
+	font-size: 16px;
+	
+	background: url(../img/bg1.png) 0 0 repeat;
+}
+h1, h2, h3{
+	text-shadow: 0 2px 2px #000;
+	text-align: center;
+	color: #12d5e1;
+}
+h1{
+	font: 2.5em/2.5em 'Lobster';
+	margin: 25px 0;
+}
+h2{
+	font-size: 2em;
+	margin: 10px 0;
+}
+h3{
+	text-align: left;
+	font-size: 1.5em;
+	padding: 10px;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+}
+.fixed-box-r2{
+	width: 150px;
+	height: 206px;
+	position: fixed;
+	left: 1%;
+	bottom: 0;
+	background: url(../img/r2.png) 0 0 no-repeat;
+	background-size: 100% auto;
+}
+a, a:link,
+a:active,
+a:visited {
+  outline: none;
+  text-decoration:none;
+}
+img { 
+  display:block;
+}
+
+.rotate-wrap{
+    -webkit-transition:  all 0.6s ease-in-out;
+    -moz-transition:  all 0.6s ease-in-out;
+    -o-transition:  all 0.6s ease-in-out;
+    -ms-transition:  all 0.6s ease-in-out;
+    transition:  all 0.6s ease-in-out;
+}
+
+/*
+* Header
+*/
+header[role="always-top"]{
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+}
+header[role="always-top"].always-top{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 6;
+	opacity: 0.8;
+	filter: alpha(opacity="80");
+}
+.logo{
+	margin: 0 15px;
+	position: relative;
+	top: -10px;
+}
+.logo-link{
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+	display: block;
+	border-radius: 50%;
+	border: 3px solid #CCC;
+  
+	-webkit-transition:  all 0.6s ease-in-out;
+	-moz-transition:  all 0.6s ease-in-out;
+	-o-transition:  all 0.6s ease-in-out;
+	-ms-transition:  all 0.6s ease-in-out;
+	transition:  all 0.6s ease-in-out;
+	position: relative;
+}
+.logo-link:hover {
+	-webkit-transform:rotate(720deg);
+	-moz-transform:rotate(720deg);
+	-o-transform:rotate(720deg);
+	-ms-transform:rotate(720deg);
+	transform:rotate(720deg);
+}
+.logo-link-image{
+	width: 60px;
+	height: auto;
+	border-radius: 50%;
+	display: block;
+	position: absolute;
+}
+.logo-link-image-active{
+	z-index: 1;
+}
+
+/*
+* Navigation
+*/
+.main-navigation{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 15px;
+}
+.main-navigation-menu-list{
+	height: 40px;
+ 
+	background-color: #616975;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(114, 122, 134)),to(rgb(80, 88, 100)));
+	background-image: -webkit-linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
+	background-image: -moz-linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
+	background-image: -o-linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
+	background-image: -ms-linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
+	background-image: linear-gradient(top, rgb(114, 122, 134), rgb(80, 88, 100));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#727a86', EndColorStr='#505864');
+
+	border-radius: 6px;
+	box-shadow: 0 0 10px 1px #aaa;
+}
+.main-navigation-menu-list-item{
+    height: 40px;
+    list-style: none;
+	float: left;
+    display: block;
+}
+.main-navigation-menu-list-item-link{
+    display: block;
+    padding: 0 15px;
+    margin: 6px;
+    line-height: 28px;
+    text-decoration: none;
+ 
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+ 
+    color: #f3f3f3;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+ 
+    -webkit-transition: color .2s ease-in-out;
+    -moz-transition: color .2s ease-in-out;
+    -o-transition: color .2s ease-in-out;
+    -ms-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
+}
+.main-navigation-menu-list-item:hover > .main-navigation-menu-list-item-link{
+	color: #8fde62;
+}
+
+/*
+* Content
+*/
+.content-wrap{
+	width: 70%;
+	margin: 25px auto;
+	position: relative;
+	z-index: 5;
+}
+.flying-block{
+	width: 56%;
+	/*position: absolute;
+	top: 0;*/
+	
+	height: auto;
+	color: #371f38;
+	border-radius: 20px;
+	border: 2px solid #9a8f79;
+	margin: 30px 0;
+	padding: 2%;
+	position: relative;
+	overflow: hidden;
+	background: url(../img/bg1.png) 0 0 repeat;
+	opacity: .8;
+	filter: alpha(opacity="80");	
+	box-shadow: 0 0 20px 2px #111;
+
+	-webkit-transition: all 2s ease-in-out;
+	-moz-transition: all 2s ease-in-out;
+	-o-transition: all 2s ease-in-out;
+	-ms-transition: all 2s ease-in-out;
+	transition: all 2s ease-in-out;
+}
+#about-me{
+
+	/*top: 200px;
+	left: 10%;*/
+}
+#work-experience{
+	float: right;
+	/*top: 700px;
+	right: 10%;*/
+}
+
+#portfolio{
+
+	/*top: 1500px;
+	left: 10%;*/
+}
+
+.strange{
+	text-transform: uppercase;
+}
+
+/*
+* Accordeon
+*/
+
+.hidden-content{
+	display: none;
+	padding: 10px;
+	color: #fff;
+}
+.accordeon-title{
+	cursor: pointer;
+}
+.accordeon-item{
+	margin: 5px;
+	border-radius: 10px;
+	background-color: #6C6E74;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#6C6E74), to(#4B4D51));
+	background-image: -webkit-linear-gradient(top, #6C6E74, #4B4D51);
+	background-image: -moz-linear-gradient(top, #6C6E74, #4B4D51);
+	background-image: -ms-linear-gradient(top, #6C6E74, #4B4D51);
+	background-image: -o-linear-gradient(top, #6C6E74, #4B4D51);
+	background-image: linear-gradient(top, #6C6E74, #4B4D51);
+}
+.accordeon-item:hover, .accordeon-item.show{
+	background-color: #534952;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#534952), to(#736876));
+	background-image: -webkit-linear-gradient(top, #534952, #736876);
+	background-image: -moz-linear-gradient(top, #534952, #736876);
+	background-image: -ms-linear-gradient(top, #534952, #736876);
+	background-image: -o-linear-gradient(top, #534952, #736876);
+	background-image: linear-gradient(top, #534952, #736876);
+}
+.accordeon-item a{
+	color: #cc9;
+	text-shadow: 1px 1px 1px #000;
+	outline: none;
+	text-decoration: underline;
+}
+.accordeon-item a:hover{
+	text-decoration: none;
+}
+
+
+/*
+* Portfolio
+*/
+.portfolio-thumbs-item{
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 2% 2% 0 0;
+	border: 1px solid #f19908;
+	box-shadow: 0 0 5px #f19908;
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+}
+.portfolio-thumbs-item:hover{
+	box-shadow: 0 0 15px #f19908;
+}
+.portfolio-thumbs-item-image{
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+}
+.portfolio-thumbs-item-site-desc-link{
+	width: 100%;
+	height: 30px;
+	display: block;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	background: #000;
+	opacity: .8;
+	filter: alpha(opacity="80");
+	position: absolute;
+	bottom: -30px;
+	border-radius: 0 0 10px 10px;
+}
+
+
+
+
+
+
+
+/*
+* parallax
+*/
+.parallax-box{
+	width: 100%;
+	position: fixed;
+	z-index: 3;
+}
+.parallax-box-1{
+	left: 0;
+	top: 100px;
+}
+.bg-1{
+	position: absolute;
+	top: 0;
+	right: 5%;
+}
+
+
+
+
+
+
+
+.tuna {
+  /* steps causes the animation to chunk into 12 equal pieces */
+  -moz-animation: walk-cycle 1s steps(12) infinite;
+  -webkit-animation: walk-cycle 1s steps(12) infinite;
+  animation: walk-cycle 1s steps(12) infinite;
+  background: url(http://www.rachelnabors.com/animation/toys/img/tuna-walking_sprite.png) 0 0 no-repeat; 
+  height: 200px;
+  width: 400px;
+  margin: 100px auto 0;
+}
+@-webkit-keyframes walk-cycle {  
+  0% {background-position: 0 0; } 
+  100% {background-position: 0 -2391px; } /* Must be full height of sprite or skipping will happen.*/
+}
+@-moz-keyframes walk-cycle {  
+  0% {background-position: 0 0; } 
+  100% {background-position: 0 -2391px; } /* Must be full height of sprite or skipping will happen.*/
+}
+@keyframes walk-cycle {  
+  0% {background-position: 0 0; } 
+  100% {background-position: 0 -2391px; } /* Must be full height of sprite or skipping will happen.*/
+}
+
+
+
