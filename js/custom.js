@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	timeflag = 0;
 	
-	//logo change image
+	/* logo change image */
 	$('[data-js="logo-link"]').hover(
 		function(){
 			theTime = new Date();
@@ -16,44 +16,36 @@ $(document).ready(function() {
 		}
 	);
 
-	// parallax
+	/* fly-box */
 	$(window).bind('scroll',function(e){
-	    parallaxScroll();
+	    flyBox();
 		menuWalk();
 	});
-	function parallaxScroll(){
-		var scrolled = $(window).scrollTop();
-		
-		top1 = (100+(scrolled*.25))+'px';
-	    $('.parallax-box-1').animate({'top':top1}, 100);
-	}
 
-
-	// menu walk
-	
-	function menuWalk(){
-		if($(window).scrollTop() > 50){
-		 	$('header[role="always-top"]').addClass('always-top');
-		}else{
-			$('header[role="always-top"]').removeClass('always-top');
-		}
-	}
-	
 	/* menu navigation */
-
 	$('.main-navigation-menu-list-item-link').bind('click', function(event){
 		var targetPlace = $(this).attr('href');
 
 		$('html, body').stop().animate({
-			scrollTop: $(targetPlace).offset().top
+			scrollTop: ($(targetPlace).offset().top - 100)
 		}, 1500);
 		event.preventDefault();
 	});
-
-
-	
-	
 	/* end menu navigation */
+	
+	/* Menu height change */
+	if($(window).width() < 600){
+		$('.main-navigation-menu-list-item-with-logo').remove();
+		$('.main-navigation-menu-list').hover(
+			function(){
+				$(this).animate({'height':'120px'}, 500);
+			},
+			function(){
+				$(this).animate({'height':'25px'}, 500);
+			}
+		);
+	}
+	/* end Menu height change */
 	
 	
 	/* open/close accordeon */
@@ -158,37 +150,23 @@ $(document).ready(function() {
 
 	});
 	/* end popup */
-	
-	// site down
-	$('[data-js="site-down"]').click(function(){
-		if($.support.htmlSerialize == true){		
-			bh = $(window).height();
-			bw = $(window).width();
-			$('.rotate-wrap').css({
-				'-webkit-transform':'rotate(90deg)',
-			    '-moz-transform':'rotate(90deg)',
-			    '-o-transform':'rotate(90deg)',
-			    '-ms-transform':'rotate(90deg)',
-			    'transform':'rotate(90deg)',
-				'width':bh,
-				'margin-top':(bh/2),
-				'margin-left':(bw/2)
-			});
-			$('header[role="always-top"]').width('100%');
-			
-			setTimeout('alert("Ну вот...доигрались. Давай f5 жми :)")', 3000);
-		}else{
-			alert('в это браузере ничего не получится :(');	
-		}
-		return false;
-	});
 		
 });
 
-function popupImageSlider(act){
-	
-
-
-	
+// Menu Walk
+function menuWalk(){
+	if($(window).scrollTop() > 50){
+	 	$('header[role="always-top"]').addClass('always-top');
+		
+	}else{
+		$('header[role="always-top"]').removeClass('always-top');
+	}
 }
 
+// Fly Box
+function flyBox(){
+	var scrolled = $(window).scrollTop();
+	
+	topScrolled = (100+(scrolled*.25))+'px';
+    $('.fly-box').animate({'top':topScrolled}, 100);
+}

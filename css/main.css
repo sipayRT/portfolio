@@ -40,41 +40,43 @@ h3{
 a, a:link,
 a:active,
 a:visited {
-  outline: none;
-  text-decoration:none;
+	outline: none;
+	text-decoration:none;
 }
 img { 
-  display:block;
-}
-
-.rotate-wrap{
-    -webkit-transition:  all 0.6s ease-in-out;
-    -moz-transition:  all 0.6s ease-in-out;
-    -o-transition:  all 0.6s ease-in-out;
-    -ms-transition:  all 0.6s ease-in-out;
-    transition:  all 0.6s ease-in-out;
+ 	display:block;
 }
 
 /*
 * Header
 */
 header[role="always-top"]{
-	width: 70%;
+	width: 100%;
 	margin: 0 auto;
 	text-align: center;
+	position: relative;
+	z-index: 6;
+	
+	-webkit-transition:  all 0.6s ease-in-out;
+    -moz-transition:  all 0.6s ease-in-out;
+    -o-transition:  all 0.6s ease-in-out;
+    -ms-transition:  all 0.6s ease-in-out;
+    transition:  all 0.6s ease-in-out;
 }
 header[role="always-top"].always-top{
-	width: 100%;
+	height: 72px;
 	position: fixed;
 	top: 0;
-	z-index: 6;
 	opacity: 0.8;
 	filter: alpha(opacity="80");
+	margin: 5px auto;
+	margin: 5px auto;
 }
 .logo{
 	margin: 0 15px;
 	position: relative;
 	top: -10px;
+	z-index: 10;
 }
 .logo-link{
 	width: 60px;
@@ -101,7 +103,7 @@ header[role="always-top"].always-top{
 .logo-link-image{
 	width: 60px;
 	height: auto;
-	border-radius: 50%;
+	border-radius: 30px;
 	display: block;
 	position: absolute;
 }
@@ -173,8 +175,6 @@ header[role="always-top"].always-top{
 }
 .flying-block{
 	width: 56%;
-	/*position: absolute;
-	top: 0;*/
 	
 	height: auto;
 	color: #371f38;
@@ -202,7 +202,7 @@ header[role="always-top"].always-top{
 #about-me dd{
 	padding-left: 50px;
 }
-#work-experience{
+#work-experience, #contacts{
 	float: right;
 }
 
@@ -217,7 +217,6 @@ header[role="always-top"].always-top{
 /*
 * Accordeon
 */
-
 .hidden-content{
 	display: none;
 	padding: 10px;
@@ -331,7 +330,6 @@ header[role="always-top"].always-top{
 	height: 94%;
 	margin: 2%;
 	padding: 0;
-	/*background: #fff;*/
 	border-radius: 10px;
 	position: relative;
 	overflow: hidden;
@@ -373,24 +371,53 @@ header[role="always-top"].always-top{
 	background: url(../img/prev-next.png) 0 -38px no-repeat;	
 }
 
-
-
-
+/*
+* Contacts
+*/
+.contact-title-also{
+	color: #12D5E1;
+}
+.contacts-link{
+	line-height: 22px;
+	color: #c19908;
+	display: inline-block;
+	background-image: url(../img/contact-sprite.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	padding: 2px 0 2px 25px;
+	margin: 5px 0;
+}
+.contacts-link-mobile{
+	background-position: 0 -125px;
+}
+.contacts-link-skype{
+	background-position: 0 -175px;
+}
+.contacts-link-yamail{
+	background-position: 0 -97px;
+}
+.contacts-link-gmail{
+	background-position: 0 -71px;
+}
+.contacts-link-moikrug{
+	background-position: 0 -22px;
+}
+.contacts-link-vk{
+	background-position: 0 3px;
+}
 
 
 /*
-* parallax
+* Fly Box
 */
-.parallax-box{
+.fly-box{
 	width: 100%;
 	position: fixed;
-	z-index: 3;
-}
-.parallax-box-1{
 	left: 0;
 	top: 100px;
+	z-index: 3;
 }
-.bg-1{
+.fly-box-bg{
 	position: absolute;
 	top: 0;
 	right: 5%;
@@ -407,36 +434,70 @@ footer[role="content-info"]{
 	width: 140px;
 	margin: 10px auto;
 }
-.copyright{
+.copyright, .the-end{
 	text-align: center;
 	font-size: 14px;
 }
 
 
 
-
-.tuna {
-  /* steps causes the animation to chunk into 12 equal pieces */
-  -moz-animation: walk-cycle 1s steps(12) infinite;
-  -webkit-animation: walk-cycle 1s steps(12) infinite;
-  animation: walk-cycle 1s steps(12) infinite;
-  background: url(http://www.rachelnabors.com/animation/toys/img/tuna-walking_sprite.png) 0 0 no-repeat; 
-  height: 200px;
-  width: 400px;
-  margin: 100px auto 0;
+/*
+* Media queries
+*/
+@media screen and (max-width: 785px){
+	.content-wrap {
+		width: 90%;
+		margin: 25px 0 25px 5%;
+	}
+	.flying-block{
+		width: 96%;
+	}
 }
-@-webkit-keyframes walk-cycle {  
-  0% {background-position: 0 0; } 
-  100% {background-position: 0 -2391px; } /* Must be full height of sprite or skipping will happen.*/
+@media screen and (max-width: 605px){
+	.main-navigation{
+		width: 90%;
+		margin: 0 auto;
+		display: block;
+	}
+	.main-navigation-menu-list{
+		height: 25px;
+		overflow: hidden;
+	}
+	.main-navigation-menu-list-item{
+		height: 30px;
+		float: none;
+		padding: 0;
+		
+		background-color: #53575e;
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#7c828c), to(#53575e));
+		background-image: -webkit-linear-gradient(top, #7c828c, #53575e);
+		background-image: -moz-linear-gradient(top, #7c828c, #53575e);
+		background-image: -ms-linear-gradient(top, #7c828c, #53575e);
+		background-image: -o-linear-gradient(top, #7c828c, #53575e);
+		background-image: linear-gradient(top, #7c828c, #53575e);
+	}
+	.logo-link{
+		top: -3px;
+		margin: 0 auto;
+	}
+	.main-navigation-menu-list-item-link{
+		margin: 0;
+		line-height: 25px;
+	}
 }
-@-moz-keyframes walk-cycle {  
-  0% {background-position: 0 0; } 
-  100% {background-position: 0 -2391px; } /* Must be full height of sprite or skipping will happen.*/
+@media screen and (max-width: 480px){
+	h1{
+		line-height: 1;
+	}
+	.portfolio-thumbs-item{
+		width: 45%;
+		margin: 2% 0 0 2%;
+	}
+	.portfolio-thumbs-item:nth-child(2n+1){
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+	.portfolio-thumbs-item:nth-child(3n+1){
+		margin-left: 2%;
+	}
 }
-@keyframes walk-cycle {  
-  0% {background-position: 0 0; } 
-  100% {background-position: 0 -2391px; } /* Must be full height of sprite or skipping will happen.*/
-}
-
-
-
