@@ -61,7 +61,6 @@ $(document).ready(function() {
 				$(this).find('.hidden-content').slideDown();
 			}
 		});
-		
 	}
 	/* END open/close accordeon */
 	
@@ -86,8 +85,6 @@ $(document).ready(function() {
 			allImagesArray.push($(this).html());
 		});
 		allImagesContainer = allImagesArray.join('');
-		
-
 		nextSlide = slideIndex + 1;
 		prevSlide = ((slideIndex - 1) <= 0) ? (slideCount - 1) : slideIndex - 1;
 		stopSlide = slideCount - 1;
@@ -144,7 +141,6 @@ $(document).ready(function() {
 			}
 		});	
 	});
-	
 	$('.close-popup-button, .popup-bg').live('click',function(){
 		$('.popup-content-wrap, .popup-bg').remove();
 
