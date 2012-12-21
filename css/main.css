@@ -323,7 +323,7 @@ header[role="always-top"].always-top{
 	left: 20%;
 	z-index: 15;
 	border-radius: 15px;
-	background: rgba(0,0,0,0.7);
+	background: #000;
 }
 .popup-content{
 	width: 96%;
